@@ -20,7 +20,7 @@ Uma aplicação Next.js completa para gerenciamento de produtos com dashboard de
 - **Produtos recentes** com navegação
 
 ### 🔐 Autenticação
-- **Login** com token da API oficial
+- **Login** com token da API
 - **Rotas protegidas** com AuthGuard
 - **Validação de sessão** automática
 - **Logout** seguro
@@ -135,18 +135,6 @@ src/
 ├── types/              # Tipos TypeScript
 └── utils/              # Utilitários
 ```
-
-## 🚀 Deploy
-
-### Vercel (Recomendado)
-1. Conecte seu repositório GitHub
-2. Configure a variável `NEXT_PUBLIC_API_URL`
-3. Deploy automático
-
-### Netlify
-1. Build: `npm run build`
-2. Publish directory: `.next`
-3. Configure a variável de ambiente
 
 ## 🎯 Diferenciais Implementados
 
