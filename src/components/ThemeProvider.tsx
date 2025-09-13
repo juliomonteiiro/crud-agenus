@@ -5,15 +5,12 @@ import { useThemeStore } from '@/stores/themeStore'
 
 interface ThemeProviderProps {
 	children: React.ReactNode
-	defaultTheme?: 'light' | 'dark' | 'system'
-	storageKey?: string
 }
 
 export function ThemeProvider({
-	children,
-	defaultTheme = 'system'
+	children
 }: ThemeProviderProps) {
-	const { theme, setTheme } = useThemeStore()
+	const { theme } = useThemeStore()
 
 	useEffect(() => {
 		const root = window.document.documentElement
