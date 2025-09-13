@@ -1,190 +1,208 @@
 # 🚀 CRUD Agenus - Desafio Técnico Front-End
 
-Uma aplicação Next.js completa para gerenciamento de produtos com dashboard de métricas, desenvolvida para o desafio técnico da vaga Front-End.
+Uma aplicação Next.js completa para gerenciamento de produtos com interface moderna, dark mode e componentes Hero UI.
 
-## 🎯 Funcionalidades Implementadas
+## 📋 Funcionalidades
 
-### ✅ CRUD de Produtos
+### ✅ **CRUD de Produtos**
 - **Criar** produtos com título, descrição, thumbnail e status
-- **Editar** produtos existentes com dados pré-preenchidos
+- **Listar** produtos com paginação, filtros e ordenação
+- **Editar** produtos existentes
 - **Deletar** produtos com confirmação
-- **Listar** produtos com paginação, filtros e busca
-- **Upload** de imagens com validação de tipo e tamanho
-- **Filtros avançados** por status, busca por texto e ordenação
+- **Upload** de thumbnails com validação
+- **Filtros** por status (ativo/inativo) e busca por título/descrição
+- **Ordenação** por nome, status, data de criação e atualização
 
-### 📊 Dashboard com Métricas
-- **Gráficos interativos** usando Recharts
-- **Métricas em tempo real** baseadas nos dados da API
-- **Visualizações**: Pizza, Linha, Barras
-- **Dados mockados** para demonstração
-- **Produtos recentes** com navegação
+### 📊 **Dashboard com Métricas**
+- Gráficos interativos com Recharts
+- Métricas de produtos (total, ativos, inativos)
+- Produtos recentes
+- Visualização de dados em tempo real
 
-### 🔐 Autenticação
-- **Login** com token da API
-- **Rotas protegidas** com AuthGuard
-- **Validação de sessão** automática
-- **Logout** seguro
-- **Validação robusta** com Zod
-
-### 🎨 UI/UX
-- **Design responsivo** - Funciona perfeitamente em desktop e mobile
-- **Dark Mode** - Toggle na sidebar com persistência
-- **Interface moderna** - Componentes customizados
-- **Animações suaves** - Transições elegantes
-- **Loading states** - Skeletons e spinners
+### 🎨 **Interface Moderna**
+- **Dark Mode** funcional com persistência
+- **Design Responsivo** para desktop e mobile
+- **Componentes Hero UI** (Headless UI) para acessibilidade
+- **Animações** e transições suaves
+- **Validação** completa com Zod
 
 ## 🛠️ Stack Tecnológica
 
-- **Next.js 15.5.3** - Framework React com SSR
-- **React 19.1.0** - Biblioteca de interface
-- **Zustand 5.0.8** - Gerenciamento de estado (diferencial!)
-- **Tailwind CSS 3.4.17** - Estilização e responsividade
-- **Zod 4.1.8** - Validação de formulários
-
-- **Heroicons** - Ícones da interface
-- **Componentes customizados** - Button, Modal, Card, Input, Switch
-- **Recharts** - Gráficos e visualizações
+### **Frontend**
+- **Next.js 15** - Framework React com SSR
+- **React 18** - Biblioteca de interface
+- **TypeScript** - Tipagem estática
+- **Tailwind CSS** - Estilização utilitária
+- **Zustand** - Gerenciamento de estado
+- **Hero UI (Headless UI)** - Componentes acessíveis
+- **Heroicons** - Ícones SVG
+- **Recharts** - Gráficos e métricas
 - **React Hook Form** - Gerenciamento de formulários
-- **Axios** - Cliente HTTP com interceptors
-- **Next.js Image** - Otimização de imagens
+- **Zod** - Validação de schemas
+
+### **Backend/API**
+- **API Externa** - [api-teste-front-production.up.railway.app](https://api-teste-front-production.up.railway.app)
+- **Autenticação** - Token-based
+- **Upload** - Multipart/form-data para imagens
 
 ## 🚀 Como Executar
 
-### Pré-requisitos
+### **Pré-requisitos**
 - Node.js 18+ 
 - npm ou yarn
 
-### Instalação
-
-1. **Clone o repositório**
+### **Instalação**
 ```bash
+# Clone o repositório
 git clone https://github.com/juliomonteiiro/crud-agenus.git
+
+# Entre no diretório
 cd crud-agenus
-```
 
-2. **Instale as dependências**
-```bash
+# Instale as dependências
 npm install
-# ou
-yarn install
+
+# Configure as variáveis de ambiente
+cp .env.example .env.local
 ```
 
-3. **Configure as variáveis de ambiente**
-```bash
-# Crie um arquivo .env.local na raiz do projeto
+### **Variáveis de Ambiente**
+```env
 NEXT_PUBLIC_API_URL=https://api-teste-front-production.up.railway.app
 ```
 
-4. **Execute o projeto**
+### **Executar em Desenvolvimento**
 ```bash
 npm run dev
-# ou
-yarn dev
 ```
 
-5. **Acesse a aplicação**
+Acesse [http://localhost:3000](http://localhost:3000)
+
+### **Build para Produção**
+```bash
+npm run build
+npm start
 ```
-http://localhost:3000
-```
 
-## 🔑 Credenciais de Teste
-
-Use as credenciais fornecidas pela API:
-- Acesse: `https://api-teste-front-production.up.railway.app/docs/`
-- Faça login para obter seu token
-- Use o token na aplicação
-
-## 📱 Funcionalidades Detalhadas
-
-### 🔍 Filtros e Busca
-- **Busca por texto** - Título e descrição
-- **Filtro por status** - Ativos, Inativos, Todos
-- **Ordenação** - Por nome, data, status
-- **Paginação** - Navegação intuitiva
-- **Limpar filtros** - Reset rápido
-
-### 📊 Dashboard
-- **Métricas em tempo real** - Total, ativos, inativos
-- **Gráfico de status** - Pizza chart
-- **Tendência mensal** - Line chart
-- **Distribuição** - Bar chart
-- **Produtos recentes** - Lista atualizada
-
-### ✅ Validações
-- **Zod schemas** - Validação robusta
-- **Mensagens em português** - Feedback claro
-- **Validação de arquivos** - Tipo e tamanho
-- **Regex patterns** - Caracteres válidos
-- **Validação client-side** - Instantânea
-
-## 🏗️ Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```
 src/
-├── components/          # Componentes reutilizáveis
-│   ├── auth/           # Autenticação
-│   ├── dashboard/      # Gráficos e métricas
-│   ├── layout/         # Layout e navegação
-│   ├── products/       # CRUD de produtos
-│   └── ui/             # Componentes base
-├── hooks/              # Custom hooks
-├── pages/              # Páginas Next.js
-├── services/           # Serviços de API
-├── stores/             # Zustand stores
-├── styles/             # Estilos globais
-├── types/              # Tipos TypeScript
-└── utils/              # Utilitários
+├── components/           # Componentes reutilizáveis
+│   ├── auth/            # Autenticação
+│   ├── dashboard/       # Dashboard e métricas
+│   ├── layout/          # Layout (Header, Sidebar)
+│   ├── products/        # Componentes de produtos
+│   └── ui/              # Componentes base (Hero UI)
+├── pages/               # Páginas da aplicação
+├── stores/              # Zustand stores
+├── services/            # Serviços de API
+├── styles/              # Estilos globais
+└── utils/               # Utilitários
 ```
 
-## 🎯 Diferenciais Implementados
+## 🎯 Funcionalidades Implementadas
 
-- ✅ **Zustand** como gerenciador de estado
-- ✅ **Dark Mode** funcional e persistente
-- ✅ **Animações** e transições elegantes
-- ✅ **Validação robusta** com Zod
-- ✅ **Interface responsiva** mobile-first
-- ✅ **Gráficos interativos** com Recharts
-- ✅ **Filtros avançados** e busca
-- ✅ **Loading states** e skeletons
-- ✅ **TypeScript** completo
-- ✅ **Código limpo** e organizado
-- ✅ **Next.js Image** otimizado
-- ✅ **Interceptors Axios** automáticos
+### **✅ Requisitos Obrigatórios**
+- [x] CRUD completo de produtos
+- [x] Autenticação com token
+- [x] Validação com Zod
+- [x] Interface responsiva
+- [x] Dark mode funcional
+- [x] Deploy na Vercel
+
+### **✅ Stack Diferencial**
+- [x] **Zustand** para gerenciamento de estado
+- [x] **Hero UI (Headless UI)** para componentes
+- [x] **Animações** e transições elegantes
+- [x] **Validação avançada** com Zod
+- [x] **Upload de arquivos** com validação
+- [x] **Filtros e ordenação** avançados
 
 ## 🔧 Scripts Disponíveis
 
 ```bash
-# Desenvolvimento
-npm run dev
-
-# Build para produção
-npm run build
-
-# Iniciar servidor de produção
-npm run start
-
-# Linting
-npm run lint
+npm run dev          # Desenvolvimento
+npm run build        # Build de produção
+npm run start        # Servidor de produção
+npm run lint         # Linting
+npm run type-check   # Verificação de tipos
 ```
 
-## 🌐 Deploy Online
+## 📱 Responsividade
 
-**Link da aplicação:** [https://crud-agenus.vercel.app](https://crud-agenus.vercel.app)
+- **Desktop** - Layout completo com sidebar
+- **Mobile** - Interface otimizada para touch
 
-## 📊 API Utilizada
+## 🎨 Tema
 
-- **Base URL:** `https://api-teste-front-production.up.railway.app`
-- **Documentação:** `https://api-teste-front-production.up.railway.app/docs/`
-- **Autenticação:** Token Bearer
-- **Endpoints:** Produtos, Autenticação
+- **Sistema** - Segue preferência do SO
+- **Claro** - Tema light
+- **Escuro** - Tema dark
+- **Persistência** - Salva preferência no localStorage
+
+## 🔐 Autenticação
+
+- **Login** com email e senha
+- **Token** armazenado no localStorage
+- **Proteção** de rotas com AuthGuard
+- **Logout** remove token localmente
+
+## 📊 Métricas do Dashboard
+
+- **Total de Produtos** - Contagem geral
+- **Produtos Ativos** - Produtos habilitados
+- **Produtos Inativos** - Produtos desabilitados
+- **Produtos Recentes** - Últimos 3 produtos
 
 ## 🤝 Contribuição
 
-Este é um projeto de desafio técnico. Para dúvidas ou sugestões, entre em contato.
+1. Fork o projeto
+2. Crie uma branch (`git checkout -b feature/nova-funcionalidade`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
+4. Push para a branch (`git push origin feature/nova-funcionalidade`)
+5. Abra um Pull Request
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido para fins de avaliação técnica.
+Este projeto foi desenvolvido para o desafio técnico Front-End da Agenus.
+
+## 👨‍💻 Desenvolvedor
+
+**Julio Monteiro**
+- GitHub: [@juliomonteiiro](https://github.com/juliomonteiiro)
+- LinkedIn: [Julio Monteiro](https://www.linkedin.com/in/julio-alexsandro-monteiro-da-silva-294b25248/)
+
+---
+
+## 🎯 Diferenciais Implementados
+
+### **UX/UI**
+- Interface moderna e intuitiva
+- Animações suaves e transições
+- Feedback visual em todas as ações
+- Loading states e skeletons
+- Modais de confirmação elegantes
+
+### **Performance**
+- Lazy loading de componentes
+- Otimização de imagens com Next.js
+- Bundle splitting automático
+- Cache inteligente
+
+### **Acessibilidade**
+- Componentes Headless UI
+- Navegação por teclado
+- Screen reader friendly
+- Contraste adequado
+- Foco visível
+
+### **Desenvolvimento**
+- TypeScript em 100% do código
+- ESLint e Prettier configurados
+- Estrutura modular e escalável
+- Documentação completa
+- Código limpo e legível
 
 ---
 
