@@ -72,6 +72,9 @@ export function Sidebar() {
 				</div>
 
 				<div className="p-6 border-t border-border space-y-3">
+
+					<SimpleThemeToggle />
+					
 					<button
 						onClick={handleLogout}
 						className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg hover:bg-muted transition-all duration-300 text-muted-foreground hover:text-foreground"
@@ -79,8 +82,6 @@ export function Sidebar() {
 						<ArrowRightOnRectangleIcon className="h-4 w-4" />
 						<span className="text-sm font-medium">Sair</span>
 					</button>
-
-					<SimpleThemeToggle />
 				</div>
 			</aside>
 
